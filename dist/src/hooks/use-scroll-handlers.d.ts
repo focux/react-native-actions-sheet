@@ -9,7 +9,6 @@ import { ActionSheetRef } from '../index';
  * @returns
  */
 export declare function useScrollHandlers<T>(id: string, ref: RefObject<ActionSheetRef>): {
-    scrollEnabled: boolean;
     onScroll: (event: NativeSyntheticEvent<NativeScrollEvent>) => void;
     ref: React.RefObject<T>;
     onLayout: (event: LayoutChangeEvent) => void;

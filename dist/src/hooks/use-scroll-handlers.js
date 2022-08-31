@@ -21,11 +21,10 @@ export function useScrollHandlers(id, ref) {
         (_a = ref.current) === null || _a === void 0 ? void 0 : _a.modifyGesturesForLayout(id, scrollLayout.current, scrollOffset.current);
     };
     var disableScrolling = React.useCallback(function () {
-        var _a, _b;
         //@ts-ignore
-        (_b = (_a = scrollRef.current) === null || _a === void 0 ? void 0 : _a.setNativeProps) === null || _b === void 0 ? void 0 : _b.call(_a, {
-            scrollEnabled: false
-        });
+        // scrollRef.current?.setNativeProps?.({
+        //   scrollEnabled: false,
+        // });
         if (Platform.OS === 'web') {
             //@ts-ignore
             scrollRef.current.style.touchAction = 'none';
@@ -34,11 +33,10 @@ export function useScrollHandlers(id, ref) {
         }
     }, []);
     var enableScrolling = React.useCallback(function () {
-        var _a, _b;
         //@ts-ignore
-        (_b = (_a = scrollRef.current) === null || _a === void 0 ? void 0 : _a.setNativeProps) === null || _b === void 0 ? void 0 : _b.call(_a, {
-            scrollEnabled: true
-        });
+        // scrollRef.current?.setNativeProps?.({
+        //   scrollEnabled: true,
+        // });
         if (Platform.OS === 'web') {
             //@ts-ignore
             scrollRef.current.style.overflowY = 'scroll';
@@ -73,7 +71,7 @@ export function useScrollHandlers(id, ref) {
         (_a = ref.current) === null || _a === void 0 ? void 0 : _a.modifyGesturesForLayout(id, scrollLayout.current, scrollOffset.current);
     };
     return {
-        scrollEnabled: false,
+        // scrollEnabled: false,
         onScroll: onScroll,
         ref: scrollRef,
         onLayout: onLayout,
